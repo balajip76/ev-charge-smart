@@ -1,0 +1,16 @@
+.mapContainer {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.mapSvg {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 479px) {
+  .mapContainer {
+    display: none;
+  }
+}

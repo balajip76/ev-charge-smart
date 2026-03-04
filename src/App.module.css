@@ -1,0 +1,37 @@
+.app {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 16px;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.mapSection {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .app {
+    padding: 24px 32px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}

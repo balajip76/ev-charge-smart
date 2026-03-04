@@ -1,0 +1,198 @@
+{
+  "evs": [
+    {
+      "id": "average-ev",
+      "make": "Average",
+      "model": "EV",
+      "year": 2025,
+      "kwhPer100Miles": 30,
+      "label": "Average EV (30 kWh/100mi)"
+    },
+    {
+      "id": "tesla-model-3",
+      "make": "Tesla",
+      "model": "Model 3",
+      "year": 2024,
+      "kwhPer100Miles": 26,
+      "label": "Tesla Model 3 (26 kWh/100mi)"
+    },
+    {
+      "id": "tesla-model-y",
+      "make": "Tesla",
+      "model": "Model Y",
+      "year": 2024,
+      "kwhPer100Miles": 28,
+      "label": "Tesla Model Y (28 kWh/100mi)"
+    },
+    {
+      "id": "chevy-bolt-euv",
+      "make": "Chevrolet",
+      "model": "Bolt EUV",
+      "year": 2024,
+      "kwhPer100Miles": 29,
+      "label": "Chevrolet Bolt EUV (29 kWh/100mi)"
+    },
+    {
+      "id": "nissan-leaf",
+      "make": "Nissan",
+      "model": "Leaf",
+      "year": 2024,
+      "kwhPer100Miles": 30,
+      "label": "Nissan Leaf (30 kWh/100mi)"
+    },
+    {
+      "id": "ford-mustang-mach-e",
+      "make": "Ford",
+      "model": "Mustang Mach-E",
+      "year": 2024,
+      "kwhPer100Miles": 33,
+      "label": "Ford Mustang Mach-E (33 kWh/100mi)"
+    },
+    {
+      "id": "hyundai-ioniq-5",
+      "make": "Hyundai",
+      "model": "Ioniq 5",
+      "year": 2024,
+      "kwhPer100Miles": 31,
+      "label": "Hyundai Ioniq 5 (31 kWh/100mi)"
+    },
+    {
+      "id": "kia-ev6",
+      "make": "Kia",
+      "model": "EV6",
+      "year": 2024,
+      "kwhPer100Miles": 29,
+      "label": "Kia EV6 (29 kWh/100mi)"
+    },
+    {
+      "id": "bmw-ix",
+      "make": "BMW",
+      "model": "iX xDrive50",
+      "year": 2024,
+      "kwhPer100Miles": 35,
+      "label": "BMW iX xDrive50 (35 kWh/100mi)"
+    },
+    {
+      "id": "vw-id4",
+      "make": "Volkswagen",
+      "model": "ID.4",
+      "year": 2024,
+      "kwhPer100Miles": 32,
+      "label": "Volkswagen ID.4 (32 kWh/100mi)"
+    },
+    {
+      "id": "rivian-r1s",
+      "make": "Rivian",
+      "model": "R1S",
+      "year": 2024,
+      "kwhPer100Miles": 39,
+      "label": "Rivian R1S (39 kWh/100mi)"
+    },
+    {
+      "id": "polestar-2",
+      "make": "Polestar",
+      "model": "2",
+      "year": 2024,
+      "kwhPer100Miles": 29,
+      "label": "Polestar 2 (29 kWh/100mi)"
+    }
+  ],
+  "gasVehicles": [
+    {
+      "id": "average-gas",
+      "make": "Average",
+      "model": "Gas Car",
+      "year": 2025,
+      "mpg": 27,
+      "label": "Average Gas Car (27 MPG)"
+    },
+    {
+      "id": "toyota-camry",
+      "make": "Toyota",
+      "model": "Camry",
+      "year": 2024,
+      "mpg": 32,
+      "label": "Toyota Camry (32 MPG)"
+    },
+    {
+      "id": "honda-civic",
+      "make": "Honda",
+      "model": "Civic",
+      "year": 2024,
+      "mpg": 33,
+      "label": "Honda Civic (33 MPG)"
+    },
+    {
+      "id": "ford-f150",
+      "make": "Ford",
+      "model": "F-150",
+      "year": 2024,
+      "mpg": 22,
+      "label": "Ford F-150 (22 MPG)"
+    },
+    {
+      "id": "chevy-silverado",
+      "make": "Chevrolet",
+      "model": "Silverado 1500",
+      "year": 2024,
+      "mpg": 22,
+      "label": "Chevrolet Silverado 1500 (22 MPG)"
+    },
+    {
+      "id": "toyota-rav4",
+      "make": "Toyota",
+      "model": "RAV4",
+      "year": 2024,
+      "mpg": 30,
+      "label": "Toyota RAV4 (30 MPG)"
+    },
+    {
+      "id": "honda-crv",
+      "make": "Honda",
+      "model": "CR-V",
+      "year": 2024,
+      "mpg": 30,
+      "label": "Honda CR-V (30 MPG)"
+    },
+    {
+      "id": "toyota-corolla",
+      "make": "Toyota",
+      "model": "Corolla",
+      "year": 2024,
+      "mpg": 35,
+      "label": "Toyota Corolla (35 MPG)"
+    },
+    {
+      "id": "hyundai-elantra",
+      "make": "Hyundai",
+      "model": "Elantra",
+      "year": 2024,
+      "mpg": 33,
+      "label": "Hyundai Elantra (33 MPG)"
+    },
+    {
+      "id": "nissan-altima",
+      "make": "Nissan",
+      "model": "Altima",
+      "year": 2024,
+      "mpg": 32,
+      "label": "Nissan Altima (32 MPG)"
+    },
+    {
+      "id": "ford-explorer",
+      "make": "Ford",
+      "model": "Explorer",
+      "year": 2024,
+      "mpg": 24,
+      "label": "Ford Explorer (24 MPG)"
+    },
+    {
+      "id": "subaru-outback",
+      "make": "Subaru",
+      "model": "Outback",
+      "year": 2024,
+      "mpg": 29,
+      "label": "Subaru Outback (29 MPG)"
+    }
+  ]
+}

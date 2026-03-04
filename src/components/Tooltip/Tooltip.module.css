@@ -1,0 +1,55 @@
+.tooltip {
+  position: fixed;
+  pointer-events: none;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 12px 16px;
+  z-index: 1000;
+  min-width: 200px;
+  font-size: 0.875rem;
+}
+
+.stateName {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: var(--color-text);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 0;
+}
+
+.label {
+  color: var(--color-text-muted);
+}
+
+.evValue {
+  color: var(--color-ev-green);
+  font-weight: 500;
+}
+
+.gasValue {
+  color: var(--color-gas-red);
+  font-weight: 500;
+}
+
+.divider {
+  border-top: 1px solid var(--color-border);
+  margin: 6px 0;
+}
+
+.evCheaper {
+  color: var(--color-ev-green);
+  font-weight: 600;
+}
+
+.gasCheaper {
+  color: var(--color-gas-red);
+  font-weight: 600;
+}
