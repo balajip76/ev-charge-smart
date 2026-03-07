@@ -9,8 +9,3 @@
   height: auto;
 }
 
-@media (max-width: 479px) {
-  .mapContainer {
-    display: none;
-  }
-}
