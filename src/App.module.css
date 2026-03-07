@@ -26,6 +26,39 @@
   position: relative;
 }
 
+.footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border, #e5e7eb);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.footerTitle {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--color-text);
+}
+
+.sourceList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sourceList a {
+  color: var(--color-ev, #16a34a);
+  text-decoration: underline;
+}
+
+.footerNote {
+  font-style: italic;
+  margin: 0;
+}
+
 @media (min-width: 768px) {
   .app {
     padding: 24px 32px;

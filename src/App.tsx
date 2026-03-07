@@ -67,6 +67,50 @@ export default function App() {
           y={tooltipPos.y}
         />
       </section>
+
+      <footer className={styles.footer}>
+        <p className={styles.footerTitle}>Data Sources</p>
+        <ul className={styles.sourceList}>
+          <li>
+            <strong>Electricity rates</strong> — U.S. Energy Information
+            Administration (EIA),{' '}
+            <a
+              href="https://www.eia.gov/electricity/monthly/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Electric Power Monthly
+            </a>{' '}
+            (Jan 2026)
+          </li>
+          <li>
+            <strong>Gas prices</strong> — EIA / AAA,{' '}
+            <a
+              href="https://gasprices.aaa.com/state-gas-price-averages/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              State Gas Price Averages
+            </a>{' '}
+            (Feb 2026)
+          </li>
+          <li>
+            <strong>Vehicle efficiency</strong> — U.S. Environmental Protection
+            Agency (EPA),{' '}
+            <a
+              href="https://www.fueleconomy.gov/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              fueleconomy.gov
+            </a>
+          </li>
+        </ul>
+        <p className={styles.footerNote}>
+          Estimates assume home charging and average residential electricity
+          rates. Actual costs may vary.
+        </p>
+      </footer>
     </div>
   );
 }
