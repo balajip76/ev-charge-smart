@@ -82,8 +82,9 @@ describe('US1: Hover flow integration', () => {
     expect(hasColoredPath).toBe(true);
   });
 
-  it('renders the legend', () => {
+  it('renders the legend with savings labels', () => {
     render(<App />);
-    expect(screen.getByText('Break-even')).toBeInTheDocument();
+    expect(screen.getByLabelText('Cost comparison color legend')).toBeInTheDocument();
+    expect(screen.queryByText('Break-even')).not.toBeInTheDocument();
   });
 });

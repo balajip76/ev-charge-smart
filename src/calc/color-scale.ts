@@ -1,10 +1,10 @@
-// Green (#22c55e) → White (#ffffff) → Red (#ef4444)
-// Diverging color scale for EV vs Gas cost difference
-// min (most EV savings) → deepest green, max (least EV savings) → deepest red
+// Dark Green (#15803d) → Light Green (#86efac) → Light Yellow (#fef08a)
+// Sequential color scale for EV vs Gas cost difference
+// min (most EV savings) → dark green, max (least EV savings) → light yellow
 
-const GREEN = { r: 0x22, g: 0xc5, b: 0x5e }; // #22c55e
-const WHITE = { r: 0xff, g: 0xff, b: 0xff }; // #ffffff
-const RED = { r: 0xef, g: 0x44, b: 0x44 }; // #ef4444
+const DARK_GREEN = { r: 0x15, g: 0x80, b: 0x3d }; // #15803d
+const LIGHT_GREEN = { r: 0x86, g: 0xef, b: 0xac }; // #86efac
+const LIGHT_YELLOW = { r: 0xfe, g: 0xf0, b: 0x8a }; // #fef08a
 
 function lerp(a: number, b: number, t: number): number {
   return Math.round(a + (b - a) * t);
@@ -15,40 +15,40 @@ function toHex(n: number): string {
 }
 
 /**
- * Map a monthly cost difference to a color on the green-white-red scale,
+ * Map a monthly cost difference to a color on the dark-green → light-green → light-yellow scale,
  * normalized to the actual data range across all states.
  * @param monthlyDifference - evCost - gasCost for this state
- * @param min - lowest monthlyDifference in the dataset (most EV savings → deepest green)
- * @param max - highest monthlyDifference in the dataset (least EV savings → deepest red)
- * @returns CSS hex color string (e.g., '#22c55e')
+ * @param min - lowest monthlyDifference in the dataset (most EV savings → dark green)
+ * @param max - highest monthlyDifference in the dataset (least EV savings → light yellow)
+ * @returns CSS hex color string (e.g., '#15803d')
  */
 export function getStateColor(
   monthlyDifference: number,
   min: number,
   max: number,
 ): string {
-  // Guard: if all states are identical, return neutral white
+  // Guard: if all states are identical, return neutral mid-spectrum light green
   if (min === max) {
-    return `#${toHex(WHITE.r)}${toHex(WHITE.g)}${toHex(WHITE.b)}`;
+    return `#${toHex(LIGHT_GREEN.r)}${toHex(LIGHT_GREEN.g)}${toHex(LIGHT_GREEN.b)}`;
   }
 
-  // Normalize to [0, 1]: 0 = min (deepest green), 1 = max (deepest red)
+  // Normalize to [0, 1]: 0 = min (dark green), 1 = max (light yellow)
   const t = (monthlyDifference - min) / (max - min);
 
   let r: number, g: number, b: number;
 
   if (t <= 0.5) {
-    // Green → White (lower half of range)
+    // Dark Green → Light Green (lower half of range)
     const s = t / 0.5; // 0 at min, 1 at midpoint
-    r = lerp(GREEN.r, WHITE.r, s);
-    g = lerp(GREEN.g, WHITE.g, s);
-    b = lerp(GREEN.b, WHITE.b, s);
+    r = lerp(DARK_GREEN.r, LIGHT_GREEN.r, s);
+    g = lerp(DARK_GREEN.g, LIGHT_GREEN.g, s);
+    b = lerp(DARK_GREEN.b, LIGHT_GREEN.b, s);
   } else {
-    // White → Red (upper half of range)
+    // Light Green → Light Yellow (upper half of range)
     const s = (t - 0.5) / 0.5; // 0 at midpoint, 1 at max
-    r = lerp(WHITE.r, RED.r, s);
-    g = lerp(WHITE.g, RED.g, s);
-    b = lerp(WHITE.b, RED.b, s);
+    r = lerp(LIGHT_GREEN.r, LIGHT_YELLOW.r, s);
+    g = lerp(LIGHT_GREEN.g, LIGHT_YELLOW.g, s);
+    b = lerp(LIGHT_GREEN.b, LIGHT_YELLOW.b, s);
   }
 
   return `#${toHex(r)}${toHex(g)}${toHex(b)}`;

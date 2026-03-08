@@ -10,9 +10,9 @@
   border-radius: 6px;
   background: linear-gradient(
     to right,
-    #22c55e,
-    #ffffff 50%,
-    #ef4444
+    #15803d,
+    #86efac 50%,
+    #fef08a
   );
   border: 1px solid var(--color-border);
 }
@@ -35,7 +35,7 @@
 }
 
 .labelRight {
-  color: var(--color-gas-red);
+  color: var(--color-text-muted);
   font-weight: 500;
 }
 

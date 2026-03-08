@@ -12,7 +12,6 @@ export function Legend({ minDiff, maxDiff }: LegendProps) {
         <span className={styles.labelLeft}>
           EV saves ${Math.abs(Math.round(minDiff))}/mo
         </span>
-        <span className={styles.labelCenter}>Break-even</span>
         <span className={styles.labelRight}>
           Gas saves ${Math.abs(Math.round(maxDiff))}/mo
         </span>

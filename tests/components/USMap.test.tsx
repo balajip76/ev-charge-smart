@@ -89,13 +89,13 @@ describe('USMap', () => {
       />,
     );
 
-    // CA has the best EV savings (-45, minimum) → deepest green
+    // CA has the best EV savings (-45, minimum) → dark green
     const caPath = container.querySelector('path[data-state="CA"]');
-    expect(caPath?.getAttribute('fill')).toBe('#22c55e');
+    expect(caPath?.getAttribute('fill')).toBe('#15803d');
 
-    // TX has the worst savings (-20, maximum) → deepest red
+    // TX has the worst savings (-20, maximum) → light yellow
     const txPath = container.querySelector('path[data-state="TX"]');
-    expect(txPath?.getAttribute('fill')).toBe('#ef4444');
+    expect(txPath?.getAttribute('fill')).toBe('#fef08a');
   });
 
   it('applies color based on cost difference', () => {
