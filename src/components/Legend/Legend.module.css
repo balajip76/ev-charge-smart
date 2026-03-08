@@ -5,6 +5,13 @@
   padding: 0 16px;
 }
 
+.mileageNote {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin: 0 0 6px;
+}
+
 .gradientBar {
   height: 12px;
   border-radius: 6px;
@@ -37,10 +44,4 @@
 .labelRight {
   color: var(--color-text-muted);
   font-weight: 500;
-}
-
-@media (max-width: 479px) {
-  .legend {
-    display: none;
-  }
 }

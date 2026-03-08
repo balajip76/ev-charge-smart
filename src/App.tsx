@@ -62,7 +62,7 @@ export default function App() {
           onStateHover={handleStateHover}
           onStateClick={handleStateClick}
         />
-        <Legend minDiff={minDiff} maxDiff={maxDiff} />
+        <Legend minDiff={minDiff} maxDiff={maxDiff} monthlyMiles={monthlyMiles} />
         <Tooltip
           comparison={hoveredComparison}
           x={tooltipPos.x}

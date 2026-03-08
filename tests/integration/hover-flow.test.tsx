@@ -87,4 +87,9 @@ describe('US1: Hover flow integration', () => {
     expect(screen.getByLabelText('Cost comparison color legend')).toBeInTheDocument();
     expect(screen.queryByText('Break-even')).not.toBeInTheDocument();
   });
+
+  it('renders mileage assumption label', () => {
+    render(<App />);
+    expect(screen.getByText(/miles\/month/)).toBeInTheDocument();
+  });
 });
