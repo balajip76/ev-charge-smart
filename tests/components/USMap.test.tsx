@@ -31,17 +31,25 @@ function makeComparison(
 }
 
 // Build a minimal costsByState with a few states for testing
+// CA: monthlyDifference = -45 (best savings / min)
+// TX: monthlyDifference = -20 (worst savings / max)
+// NY: monthlyDifference = -20 (tied worst)
 const mockCostsByState: Record<string, CostComparison> = {
   CA: makeComparison('CA', 'California', 45.0, 90.0),
   TX: makeComparison('TX', 'Texas', 35.0, 55.0),
   NY: makeComparison('NY', 'New York', 60.0, 80.0),
 };
 
+const mockMinDiff = -45;
+const mockMaxDiff = -20;
+
 describe('USMap', () => {
   it('renders an SVG element with role img', () => {
     render(
       <USMap
         costsByState={mockCostsByState}
+        minDiff={mockMinDiff}
+        maxDiff={mockMaxDiff}
         onStateHover={vi.fn()}
         onStateClick={vi.fn()}
       />,
@@ -58,6 +66,8 @@ describe('USMap', () => {
     const { container } = render(
       <USMap
         costsByState={mockCostsByState}
+        minDiff={mockMinDiff}
+        maxDiff={mockMaxDiff}
         onStateHover={vi.fn()}
         onStateClick={vi.fn()}
       />,
@@ -68,10 +78,32 @@ describe('USMap', () => {
     expect(paths.length).toBe(51);
   });
 
+  it('applies deepest green to state with minimum difference and deepest red to maximum', () => {
+    const { container } = render(
+      <USMap
+        costsByState={mockCostsByState}
+        minDiff={mockMinDiff}
+        maxDiff={mockMaxDiff}
+        onStateHover={vi.fn()}
+        onStateClick={vi.fn()}
+      />,
+    );
+
+    // CA has the best EV savings (-45, minimum) → deepest green
+    const caPath = container.querySelector('path[data-state="CA"]');
+    expect(caPath?.getAttribute('fill')).toBe('#22c55e');
+
+    // TX has the worst savings (-20, maximum) → deepest red
+    const txPath = container.querySelector('path[data-state="TX"]');
+    expect(txPath?.getAttribute('fill')).toBe('#ef4444');
+  });
+
   it('applies color based on cost difference', () => {
     const { container } = render(
       <USMap
         costsByState={mockCostsByState}
+        minDiff={mockMinDiff}
+        maxDiff={mockMaxDiff}
         onStateHover={vi.fn()}
         onStateClick={vi.fn()}
       />,
@@ -79,7 +111,7 @@ describe('USMap', () => {
 
     const caPath = container.querySelector('path[data-state="CA"]');
     expect(caPath).toBeInTheDocument();
-    // CA has negative difference (EV cheaper), so fill should be greenish
+    // CA has the minimum difference (best EV savings), so fill should not be the no-data color
     const fill = caPath?.getAttribute('fill');
     expect(fill).toBeTruthy();
     expect(fill).not.toBe('#e2e8f0'); // Not the "no data" color
@@ -91,6 +123,8 @@ describe('USMap', () => {
     const { container } = render(
       <USMap
         costsByState={mockCostsByState}
+        minDiff={mockMinDiff}
+        maxDiff={mockMaxDiff}
         onStateHover={onHover}
         onStateClick={vi.fn()}
       />,
@@ -112,6 +146,8 @@ describe('USMap', () => {
     const { container } = render(
       <USMap
         costsByState={mockCostsByState}
+        minDiff={mockMinDiff}
+        maxDiff={mockMaxDiff}
         onStateHover={vi.fn()}
         onStateClick={onClick}
       />,
@@ -128,6 +164,8 @@ describe('USMap', () => {
     const { container } = render(
       <USMap
         costsByState={{}} // No data at all
+        minDiff={-100}
+        maxDiff={100}
         onStateHover={vi.fn()}
         onStateClick={vi.fn()}
       />,

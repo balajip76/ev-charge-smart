@@ -12,6 +12,8 @@ import styles from './USMap.module.css';
 
 interface USMapProps {
   costsByState: Record<string, CostComparison>;
+  minDiff: number;
+  maxDiff: number;
   onStateHover: (stateAbbr: string | null, event: React.MouseEvent) => void;
   onStateClick: (stateAbbr: string) => void;
 }
@@ -23,7 +25,7 @@ interface StateFeatureProperties {
 // Null projection for pre-projected coordinates
 const pathGenerator = geoPath(null);
 
-export function USMap({ costsByState, onStateHover, onStateClick }: USMapProps) {
+export function USMap({ costsByState, minDiff, maxDiff, onStateHover, onStateClick }: USMapProps) {
   const stateFeatures = useMemo(() => {
     const topo = topoData as unknown as Topology<{
       states: GeometryCollection<StateFeatureProperties>;
@@ -50,7 +52,7 @@ export function USMap({ costsByState, onStateHover, onStateClick }: USMapProps) 
 
           const comparison = costsByState[abbr];
           const fillColor = comparison
-            ? getStateColor(comparison.monthlyDifference)
+            ? getStateColor(comparison.monthlyDifference, minDiff, maxDiff)
             : '#e2e8f0';
 
           const d = pathGenerator(feat);

@@ -57,6 +57,8 @@ export default function App() {
       <section className={styles.mapSection}>
         <USMap
           costsByState={costsByState}
+          minDiff={minDiff}
+          maxDiff={maxDiff}
           onStateHover={handleStateHover}
           onStateClick={handleStateClick}
         />
